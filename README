@@ -2,9 +2,25 @@ Google Chrome benchmarks / tests / experiments
 
 neildunn@gmail.com
 
-go/
- - Benchmarks written in Go (typically because they require a web server).
- - To run a benchmark
-   
-   $ cd go/
-   $ ./run.sh benchmark-file.go
+Benchmark descriptions:
+
+go/flicker.go
+-------------
+
+Demonstrates a renderer flicker which occurs when many windows are connected to fast updating Websockets.
+
+To run:
+
+ $ ./go/run.sh flicker
+
+This will run a server with a page to launch the benchmark. The default arguments to the benchmark should cause the bug. There are a number of parameters that can be adjusted to experiment with the bug:
+
+ $ ./go/run.sh flicker --help
+
+  -updateIntervalMs=250: update interval of Websocket in MS
+  -height=800: height of windows
+  -width=200: width of windows
+  -padding=0: padding to be added to the message (to increase WS message size)
+  -numWindows=10: number of windows to run the benchmark in
+
+Clicking on windows while the benchmark is running also helps expose the bug.

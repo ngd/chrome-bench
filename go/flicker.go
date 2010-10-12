@@ -19,11 +19,11 @@ import (
 )
 
 var addr = flag.String("addr", ":8080", "http service address")
-var updateIntervalMs = flag.Int64("updateIntervalMs", 250, "update interval in MS")
-var numWindows = flag.Int("numWindows", 10, "number Of Windows To Open")
+var updateIntervalMs = flag.Int64("updateIntervalMs", 100, "update interval of Websocket in MS")
+var numWindows = flag.Int("numWindows", 10, "number of windows to run the benchmark in")
 var padding = flag.Int("padding", 0, "padding to be added to the message (to increase WS message size)")
-var width = flag.Int("width", 100, "width of windows")
-var height = flag.Int("height", 100, "height of windows")
+var width = flag.Int("width", 200, "width of windows")
+var height = flag.Int("height", 800, "height of windows")
 
 func main() {
     flag.Parse()
