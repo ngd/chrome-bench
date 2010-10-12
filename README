@@ -1,0 +1,10 @@
+Google Chrome benchmarks / tests / experiments
+
+neildunn@gmail.com
+
+go/
+ - Benchmarks written in Go (typically because they require a web server).
+ - To run a benchmark
+   
+   $ cd go/
+   $ ./run.sh benchmark-file.go
